@@ -1,0 +1,53 @@
+.home {
+  position: relative;
+  margin: 5rem 0;
+
+  &__map {
+    &-image {
+      width: 80%;
+    }
+  }
+
+  &__icon {
+
+
+    &-image {
+      position: absolute;
+      width: 7rem;
+      transition-duration: 0.3s;
+      margin: .5rem;
+
+      &:hover {
+        width: 8rem;
+        cursor: pointer;
+        transition-duration: 0.3s;
+        margin: 0;
+      }
+
+      &--one {
+        top: 450px;
+        left: 300px;
+      }
+
+      &--second {
+        top: 300px;
+        left: 800px;
+      }
+
+      &--third {
+        top: 600px;
+        left: 850px;
+      }
+
+      &--fourth {
+        top: 100px;
+        left: 1200px;
+      }
+
+      &--fifth {
+        top: 300px;
+        left: 1050px;
+      }
+    }
+  }
+}

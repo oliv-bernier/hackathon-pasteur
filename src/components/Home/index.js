@@ -33,7 +33,7 @@ const Home = () => (
     <div className="home__icon">
       <img className="home__icon-image home__icon-image--fifth" src={icon5} alt="Icone d'ambiance" />
     </div>
-    <Details {...data[0]} />
+    <Details {...data[0]} height={30} />
   </div>
 );
 

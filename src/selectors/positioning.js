@@ -1,4 +1,4 @@
-const classes = [
+const iconsClasses = [
   'one',
   'second',
   'third',
@@ -6,18 +6,25 @@ const classes = [
   'fifth',
 ];
 
-const iconsClasses = [];
+const shuffledPositioning = iconsClasses
+  .map((a) => ({ sort: Math.random(), value: a }))
+  .sort((a, b) => a.sort - b.sort)
+  .map((a) => a.value);
 
-for (let i = 0; i < 5; i++) {
-  const randomClass = classes[Math.floor(Math.random() * classes.length)];
-  if (randomClass !== iconsClasses) {
-    iconsClasses.push(randomClass);
-  }
-}
+export default shuffledPositioning;
 
-console.log(iconsClasses);
+// const iconsClasses = [];
 
-export default iconsClasses;
+// for (let i = 0; i < 5; i++) {
+//   const randomClass = classes[Math.floor(Math.random() * classes.length)];
+//   if (randomClass[i] !== iconsClasses) {
+//     iconsClasses.push(randomClass);
+//   }
+// }
+
+// console.log(iconsClasses);
+
+// export default iconsClasses;
 
 // for (let i = 0; i < 5; i++) {
 //   const randomClass = classes[Math.floor(Math.random() * classes.length)];

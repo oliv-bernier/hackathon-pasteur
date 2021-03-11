@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import map from '../../assets/images/map-etage1.png';
 
@@ -9,18 +9,40 @@ import data from '../../data/details';
 
 import './style.scss';
 
-const Home = () => (
-  <div className="home">
-    <div className="home__map">
-      <img className="home__map-image" src={map} alt="Carte en coupe du premier étage de Pasteur" />
-    </div>
-    {icons.map((icon) => (
-      <div className="home__icon">
-        <img className={`home__icon-image home__icon-image--${icon.class}`} src={icon.image} alt="Icone d'ambiance" />
+const Home = () => {
+  const [isDetails, setDetails] = useState(false);
+
+  const [detailsIndex, setDetailsIndex] = useState('');
+
+  const findDetails = (currentIndex) => (
+    setDetailsIndex(currentIndex)
+  );
+
+  console.log(detailsIndex);
+
+  return (
+    <div className="home">
+      <div className="home__map">
+        <img className="home__map-image" src={map} alt="Carte en coupe du premier étage de Pasteur" />
       </div>
-    ))}
-    {/* <Details {...data[0]} height={30} /> */}
-  </div>
-);
+      {icons.map((icon, index) => (
+        <div>
+          <div
+            className="home__icon"
+            onClick={() => {
+              findDetails(index);
+              setDetails(true);
+            }}
+          >
+            <img key={icon.mood} className={`home__icon-image home__icon-image--${icon.class}`} src={icon.image} alt="Icone d'ambiance" />
+          </div>
+          {isDetails && (
+            <Details {...data[detailsIndex]} height={30} close={setDetails} />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default Home;

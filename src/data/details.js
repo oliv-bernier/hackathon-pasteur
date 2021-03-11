@@ -6,6 +6,7 @@ import silence from '../assets/images/silence.jpg';
 
 const details = [
   {
+    id: 1,
     mood: 'Survolté',
     band: 'Smashing Pumpkins',
     track: 'Silverfuck',
@@ -15,6 +16,7 @@ const details = [
     image: smashing,
   },
   {
+    id: 2,
     mood: 'Chill',
     band: 'Smoke City',
     track: 'Underwater Love',
@@ -24,6 +26,7 @@ const details = [
     image: smoke,
   },
   {
+    id: 3,
     mood: 'Repos',
     band: 'Miles Davis',
     track: 'Round Midnight',
@@ -33,6 +36,7 @@ const details = [
     image: davis,
   },
   {
+    id: 4,
     mood: 'Energique',
     band: 'Outkast',
     track: 'Hey Ya',
@@ -42,6 +46,7 @@ const details = [
     image: heyya,
   },
   {
+    id: 5,
     mood: 'Silence',
     band: 'John Cage',
     track: '4\'33',

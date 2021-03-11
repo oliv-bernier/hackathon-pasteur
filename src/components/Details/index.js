@@ -11,6 +11,7 @@ const Details = ({
   freq,
   image,
   height,
+  close,
 }) => {
   const progressbars = [];
 
@@ -24,7 +25,7 @@ const Details = ({
 
   return (
     <div className="details">
-      <button type="button" className="details__close">X</button>
+      <button type="button" className="details__close" onClick={() => close(false)}>X</button>
       <div className="details__zoom">
         <div className="details__zoom-mood">
           <p className="details__zoom-mood-mood">Mood:</p>
@@ -64,6 +65,7 @@ Details.propTypes = {
   freq: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
+  close: PropTypes.func.isRequired,
 };
 
 export default Details;

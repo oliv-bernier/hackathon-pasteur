@@ -1,5 +1,9 @@
 # hackathon-pasteur
 
+Project carried out as part of a hackaton for the Hotel Pasteur in Rennes, here it is the web visualization of an idea relating to an atmosphere sensor arranged in places.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

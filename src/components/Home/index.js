@@ -18,8 +18,6 @@ const Home = () => {
     setDetailsIndex(currentIndex)
   );
 
-  console.log(detailsIndex);
-
   return (
     <div className="home">
       <div className="home__map">

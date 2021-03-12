@@ -4,11 +4,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 5rem 0;
+  margin: 0;
 
   &__map {
     position: relative;
     width: 100vw;
+    padding-top: 5rem;
 
     &-image {
       width: 100vw;
@@ -35,27 +36,27 @@
       }
 
       &--one {
-        top: 45%;
+        top: 50%;
         left: 15%;
       }
 
       &--second {
-        top: 30%;
+        top: 37%;
         left: 41%;
       }
 
       &--third {
-        top: 60%;
+        top: 63%;
         left: 45%;
       }
 
       &--fourth {
-        top: 5%;
+        top: 15%;
         left: 62%;
       }
 
       &--fifth {
-        top: 45%;
+        top: 50%;
         left: 60%;
       }
     }

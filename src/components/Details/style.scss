@@ -1,30 +1,56 @@
 .details {
   position: absolute;
   width: 100%;
-  height: 100vh;
-  top: 100px;
+  height: 100%;
+  top: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   font-weight: bold;
+  margin: 0;
+  background-color: rgba(63, 58, 58, 0.2);
+  animation: appears 2s 1;
+
+  &--disapears {
+    animation: disapears 2s 1;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+    top: 50%;
+  }
 
   &__close {
-    position: absolute;
-    right: 760px;
-    top: -20px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: 1px solid black;
-    font-size: 2rem;
-    transition-duration: 0.5s;
+    position: relative;
 
-    &:hover {
-      cursor: pointer;
-      background-color: black;
-      color: white;
-      border: 1px solid white;
+    &-button {
+      position: absolute;
+      top: -290px;
+      left: 310px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      border: 1px solid black;
+      font-size: 2rem;
       transition-duration: 0.5s;
+      z-index: 1;
+
+      @media (max-width: 768px) {
+        left: 0;
+        top: -10px;
+        height: 30px;
+        width: 30px;
+        font-size: 1rem;
+      }
+  
+      &:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+        transition-duration: 0.5s;
+      }
     }
   }
 
@@ -32,8 +58,13 @@
     width: 300px;
     height: fit-content;
     padding: 1rem;
-    background-color: black;
+    background-color: rgba(63, 58, 58, 0.5);
     border-radius: 15px;
+
+    @media (max-width: 767px) {
+      width: 85%;
+      position: sticky;
+    }
 
     &-mood {
       display: flex;
@@ -65,6 +96,11 @@
       align-items: flex-start;
       position: relative;
       height: 130px;
+
+      @media (max-width: 768px) {
+        width: 95%;
+        height: 100px;
+      }
       
       &-band {
         margin: 0;
@@ -83,6 +119,10 @@
         width: 100px;
         top: 1rem;
         right: 1rem;
+
+        @media (max-width: 768px) {
+          width: 70px;
+        }
       }
     }
 
@@ -154,5 +194,25 @@
         }
       }
     }
+  }
+}
+
+@keyframes appears {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes disapears {
+  0% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
   }
 }

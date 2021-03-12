@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import './style.scss';
 
@@ -13,6 +14,7 @@ const Details = ({
   close,
 }) => {
   const progressbars = [];
+  const [isDisapears, setDisapears] = useState(false);
 
   for (let i = 0; i < 14; i++) {
     const bar = Math.floor((Math.random() * 100) + 1);
@@ -23,10 +25,19 @@ const Details = ({
     );
   }
 
+  const handleClose = () => {
+    // setDisapears(true);
+    setTimeout(() => {
+      close(false);
+    }, 50);
+  };
+
   if (mood === 'Silence') {
     return (
-      <div className="details">
-        <button type="button" className="details__close" onClick={() => close(false)}>X</button>
+      <div className={classNames('details', { 'details--disapears': isDisapears })}>
+        <div className="details__close">
+          <button type="button" className="details__close-button" onClick={handleClose}>X</button>
+        </div>
         <div className="details__zoom">
           <div className="details__zoom-mood">
             <p className="details__zoom-mood-mood">Mood:</p>
@@ -55,8 +66,10 @@ const Details = ({
       </div>
     );
   } return (
-    <div className="details">
-      <button type="button" className="details__close" onClick={() => close(false)}>X</button>
+    <div className={classNames('details', { 'details--disapears': isDisapears })}>
+      <div className="details__close">
+        <button type="button" className="details__close-button" onClick={handleClose}>X</button>
+      </div>
       <div className="details__zoom">
         <div className="details__zoom-mood">
           <p className="details__zoom-mood-mood">Mood:</p>

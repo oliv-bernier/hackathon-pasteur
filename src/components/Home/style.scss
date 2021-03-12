@@ -1,52 +1,62 @@
 .home {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin: 5rem 0;
 
   &__map {
+    position: relative;
+    width: 100vw;
+
     &-image {
-      width: 80%;
+      width: 100vw;
+
+      @media (min-width: 1400px) {
+        width: 80vw;
+      }
     }
   }
 
   &__icon {
 
-
     &-image {
       position: absolute;
-      width: 7rem;
+      width: 7%;
       transition-duration: 0.3s;
       margin: .5rem;
 
       &:hover {
-        width: 8rem;
+        width: 8%;
         cursor: pointer;
         transition-duration: 0.3s;
         margin: 0;
       }
 
       &--one {
-        top: 450px;
-        left: 300px;
+        top: 45%;
+        left: 15%;
       }
 
       &--second {
-        top: 300px;
-        left: 800px;
+        top: 30%;
+        left: 41%;
       }
 
       &--third {
-        top: 600px;
-        left: 850px;
+        top: 60%;
+        left: 45%;
       }
 
       &--fourth {
-        top: 100px;
-        left: 1200px;
+        top: 5%;
+        left: 62%;
       }
 
       &--fifth {
-        top: 300px;
-        left: 1050px;
+        top: 45%;
+        left: 60%;
       }
     }
   }

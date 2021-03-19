@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+// import { keyframes } from 'styled-components';
 
 import './style.scss';
 
@@ -13,32 +14,36 @@ const Details = ({
   image,
   close,
 }) => {
-  const progressbars = [];
   const [isDisapears, setDisapears] = useState(false);
 
-  for (let i = 0; i < 14; i++) {
-    const bar = Math.floor((Math.random() * 100) + 1);
-    progressbars.push(
-      <div className="details__zoom-analysis-div-bar">
-        <div className="details__zoom-analysis-div-progress" style={{ height: `${bar}%` }} />
-      </div>,
-    );
-  }
+  const dynamicBars = () => {
+    const progressbars = [];
+
+    for (let i = 0; i < 14; i++) {
+      const bar = Math.floor((Math.random() * 100) + 1);
+
+      progressbars.push(
+        <div className="details__zoom-analysis-div-bar" style={{ height: `${bar}%` }} />,
+      );
+    }
+
+    return progressbars;
+  };
 
   const handleClose = () => {
-    // setDisapears(true);
+    setDisapears(true);
     setTimeout(() => {
       close(false);
-    }, 50);
+    }, 600);
   };
 
   if (mood === 'Silence') {
     return (
-      <div className={classNames('details', { 'details--disapears': isDisapears })}>
+      <div className={classNames('details', { 'details--disappears': isDisapears })}>
         <div className="details__close">
           <button type="button" className="details__close-button" onClick={handleClose}>X</button>
         </div>
-        <div className="details__zoom">
+        <div className={classNames('details__zoom')}>
           <div className="details__zoom-mood">
             <p className="details__zoom-mood-mood">Mood:</p>
             <p className="details__zoom-mood-result">{mood}</p>
@@ -66,11 +71,11 @@ const Details = ({
       </div>
     );
   } return (
-    <div className={classNames('details', { 'details--disapears': isDisapears })}>
+    <div className={classNames('details', { 'details--disappears': isDisapears })}>
       <div className="details__close">
         <button type="button" className="details__close-button" onClick={handleClose}>X</button>
       </div>
-      <div className="details__zoom">
+      <div className={classNames('details__zoom')}>
         <div className="details__zoom-mood">
           <p className="details__zoom-mood-mood">Mood:</p>
           <p className="details__zoom-mood-result">{mood}</p>
@@ -88,7 +93,7 @@ const Details = ({
         <div className="details__zoom-analysis">
           <p className="details__zoom-analysis-title">Analyse de fréquence :</p>
           <div className="details__zoom-analysis-div">
-            {progressbars}
+            {dynamicBars()}
           </div>
           <div className="details__zoom-analysis-details">
             <p>Grave</p>

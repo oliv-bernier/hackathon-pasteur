@@ -33,12 +33,12 @@ const Home = () => {
             >
               <img key={icon.mood} className={`home__icon-image home__icon-image--${icon.class}`} src={icon.image} alt="Icone d'ambiance" />
             </div>
-            {isDetails && (
-              <Details {...data[detailsIndex]} close={setDetails} />
-            )}
           </div>
         ))}
       </div>
+      {isDetails && (
+        <Details {...data[detailsIndex]} close={setDetails} />
+      )}
     </div>
   );
 };

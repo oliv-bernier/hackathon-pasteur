@@ -9,12 +9,12 @@
   align-items: center;
   font-weight: bold;
   margin: 0;
-  background-color: rgba(63, 58, 58, 0.2);
-  animation: appears 1s 1;
+  background-color: rgba(63, 58, 58, 0.7);
+  animation: appears .7s 1;
 
-  // &--disapears {
-  //   animation: disapears 2s 1;
-  // }
+  &--disappears {
+    animation: disappears .7s 1;
+  }
 
   @media (max-width: 768px) {
     font-size: 0.7rem;
@@ -60,6 +60,11 @@
     padding: 1rem;
     background-color: rgba(63, 58, 58, 0.5);
     border-radius: 15px;
+    animation: appears .7s 1;
+
+    &--disappears {
+      animation: disappears .7s 1;
+    }
 
     @media (max-width: 767px) {
       width: 85%;
@@ -162,18 +167,38 @@
         border-left: 1px solid black;
         display: flex;
         flex-direction: row;
+        position: relative;
 
         &-bar {
-          width: 3px;
+          width: 5px;
           height: 110px;
           margin: 0 0.5rem;
+          bottom: 0;
           padding: 0;
           background-color: black;
+          position: absolute;
+          bottom: 0;
+          animation: sound 0ms -800ms linear infinite alternate;
+
+          &:nth-child(1)  { left: 1px; animation-duration: 474ms; }
+          &:nth-child(2)  { left: 20px; animation-duration: 433ms; }
+          &:nth-child(3)  { left: 39px; animation-duration: 407ms; }
+          &:nth-child(4)  { left: 58px; animation-duration: 458ms; }
+          &:nth-child(5)  { left: 77px; animation-duration: 400ms; }
+          &:nth-child(6)  { left: 96px; animation-duration: 427ms; }
+          &:nth-child(7)  { left: 115px; animation-duration: 441ms; }
+          &:nth-child(8)  { left: 134px; animation-duration: 419ms; }
+          &:nth-child(9)  { left: 153px; animation-duration: 487ms; }
+          &:nth-child(10) { left: 172px; animation-duration: 442ms; }
+          &:nth-child(11)  { left: 191px; animation-duration: 441ms; }
+          &:nth-child(12)  { left: 210px; animation-duration: 419ms; }
+          &:nth-child(13)  { left: 229px; animation-duration: 487ms; }
+          &:nth-child(14) { left: 248px; animation-duration: 442ms; }
         }
 
         &-progress {
-          background-color: white;
-          bottom: 0;
+          background-color: black;
+          bottom: 100%;
           margin: 0;
           padding: 0;
           bottom: 0;
@@ -198,21 +223,32 @@
 }
 
 @keyframes appears {
-  0% {
-      opacity: 0;
+  from {
+    opacity: 0;
   }
 
-  100% {
-      opacity: 1;
+  to {
+    opacity: 1;
   }
 }
 
-@keyframes disapears {
-  0% {
-      opacity: 1;
+@keyframes disappears {
+  from {
+    opacity: 1;
   }
 
-  100% {
-      opacity: 0;
+  to {
+    opacity: 0;
   }
+}
+
+@keyframes sound {
+  0% {
+    opacity: .35;
+    height: 0%;
+ }
+ 100% {
+    opacity: 1;
+    height: 100%;
+ }
 }

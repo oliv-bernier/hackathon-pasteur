@@ -1,3 +1,23 @@
 .App {
   text-align: center;
+
+  &__author {
+    font-size: 1rem;
+    color: white;
+    padding: 2rem 0 1rem 0;
+
+    &-link {
+      text-decoration: none;
+      color: white;
+
+      &:visited {
+        text-decoration: none;
+        color: white;
+      }
+
+      &:hover {
+        color: #A4A4A4;
+      }
+    }
+  }
 }

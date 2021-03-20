@@ -17,12 +17,25 @@ const Details = ({
   const [isDisapears, setDisapears] = useState(false);
 
   const dynamicBars = () => {
-    const progressbars = [];
+    let progressbars = [];
 
     for (let i = 0; i < 14; i++) {
       const bar = Math.floor((Math.random() * 100) + 1);
 
-      const msDuration = Math.floor((Math.random() * 88) + 400);
+      let msDuration = '';
+
+      if (mood === 'Repos') {
+        msDuration = Math.floor((Math.random() * 87) + 600);
+      }
+      if (mood === 'Energique') {
+        msDuration = Math.floor((Math.random() * 87) + 400);
+      }
+      if (mood === 'Survolté') {
+        msDuration = Math.floor((Math.random() * 87) + 300);
+      }
+      if (mood === 'Chill') {
+        msDuration = Math.floor((Math.random() * 87) + 500);
+      }
 
       const style = {
         height: `${bar}%`,
@@ -32,6 +45,10 @@ const Details = ({
       progressbars.push(
         <div className="details__zoom-analysis-div-bar" style={style} />,
       );
+    }
+
+    if (mood === 'Silence') {
+      progressbars = '';
     }
 
     return progressbars;
@@ -44,40 +61,7 @@ const Details = ({
     }, 600);
   };
 
-  if (mood === 'Silence') {
-    return (
-      <div className={classNames('details', { 'details--disappears': isDisapears })}>
-        <div className="details__close">
-          <button type="button" className="details__close-button" onClick={handleClose}>X</button>
-        </div>
-        <div className={classNames('details__zoom')}>
-          <div className="details__zoom-mood">
-            <p className="details__zoom-mood-mood">Mood:</p>
-            <p className="details__zoom-mood-result">{mood}</p>
-          </div>
-          <div className="details__zoom-track">
-            <p className="details__zoom-track-title">Morceau Similaire :</p>
-            <p className="details__zoom-track-band">{band}</p>
-            <p className="details__zoom-track-name">{track}</p>
-            <img className="details__zoom-track-image" src={image} alt="test" />
-          </div>
-          <div className="details__zoom-tempo">
-            <p className="details__zoom-tempo-title">Tempo : {tempo}</p>
-            <p className="details__zoom-tempo-freq">Freq : {freq}</p>
-          </div>
-          <div className="details__zoom-analysis">
-            <p className="details__zoom-analysis-title">Analyse de fréquence :</p>
-            <div className="details__zoom-analysis-div" />
-            <div className="details__zoom-analysis-details">
-              <p>Grave</p>
-              <p>Medium</p>
-              <p>Aigue</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  } return (
+  return (
     <div className={classNames('details', { 'details--disappears': isDisapears })}>
       <div className="details__close">
         <button type="button" className="details__close-button" onClick={handleClose}>X</button>

@@ -180,20 +180,26 @@
           bottom: 0;
           animation: sound 0ms -800ms linear infinite alternate;
 
-          &:nth-child(1)  { left: 1px; animation-duration: 474ms; }
-          &:nth-child(2)  { left: 20px; animation-duration: 433ms; }
-          &:nth-child(3)  { left: 39px; animation-duration: 407ms; }
-          &:nth-child(4)  { left: 58px; animation-duration: 458ms; }
-          &:nth-child(5)  { left: 77px; animation-duration: 400ms; }
-          &:nth-child(6)  { left: 96px; animation-duration: 427ms; }
-          &:nth-child(7)  { left: 115px; animation-duration: 441ms; }
-          &:nth-child(8)  { left: 134px; animation-duration: 419ms; }
-          &:nth-child(9)  { left: 153px; animation-duration: 487ms; }
-          &:nth-child(10) { left: 172px; animation-duration: 442ms; }
-          &:nth-child(11)  { left: 191px; animation-duration: 441ms; }
-          &:nth-child(12)  { left: 210px; animation-duration: 419ms; }
-          &:nth-child(13)  { left: 229px; animation-duration: 487ms; }
-          &:nth-child(14) { left: 248px; animation-duration: 442ms; }
+          // &:nth-child(1)  { left: 1px; animation-duration: 474ms; }
+          // &:nth-child(2)  { left: 20px; animation-duration: 433ms; }
+          // &:nth-child(3)  { left: 39px; animation-duration: 407ms; }
+          // &:nth-child(4)  { left: 58px; animation-duration: 458ms; }
+          // &:nth-child(5)  { left: 77px; animation-duration: 400ms; }
+          // &:nth-child(6)  { left: 96px; animation-duration: 427ms; }
+          // &:nth-child(7)  { left: 115px; animation-duration: 441ms; }
+          // &:nth-child(8)  { left: 134px; animation-duration: 419ms; }
+          // &:nth-child(9)  { left: 153px; animation-duration: 487ms; }
+          // &:nth-child(10) { left: 172px; animation-duration: 442ms; }
+          // &:nth-child(11)  { left: 191px; animation-duration: 441ms; }
+          // &:nth-child(12)  { left: 210px; animation-duration: 419ms; }
+          // &:nth-child(13)  { left: 229px; animation-duration: 487ms; }
+          // &:nth-child(14) { left: 248px; animation-duration: 442ms; }
+
+          // le même résultat dynamisé avec une boucle Sass
+          // l'animation duration est déléguée dans le JavaScript
+          @for $i from 1 through 14  {
+            &:nth-child(#{$i}) { left: -18px+19*$i; }
+          }
         }
 
         &-progress {

@@ -22,8 +22,15 @@ const Details = ({
     for (let i = 0; i < 14; i++) {
       const bar = Math.floor((Math.random() * 100) + 1);
 
+      const msDuration = Math.floor((Math.random() * 88) + 400);
+
+      const style = {
+        height: `${bar}%`,
+        'animation-duration': `${msDuration}ms`,
+      };
+
       progressbars.push(
-        <div className="details__zoom-analysis-div-bar" style={{ height: `${bar}%` }} />,
+        <div className="details__zoom-analysis-div-bar" style={style} />,
       );
     }
 

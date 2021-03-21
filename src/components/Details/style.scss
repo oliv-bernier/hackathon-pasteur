@@ -171,7 +171,6 @@
 
         &-bar {
           width: 5px;
-          height: 110px;
           margin: 0 0.5rem;
           bottom: 0;
           padding: 0;
@@ -180,19 +179,19 @@
           bottom: 0;
           animation: sound 0ms -800ms linear infinite alternate;
 
-          // &:nth-child(1)  { left: 1px; animation-duration: 474ms; }
-          // &:nth-child(2)  { left: 20px; animation-duration: 433ms; }
-          // &:nth-child(3)  { left: 39px; animation-duration: 407ms; }
-          // &:nth-child(4)  { left: 58px; animation-duration: 458ms; }
-          // &:nth-child(5)  { left: 77px; animation-duration: 400ms; }
-          // &:nth-child(6)  { left: 96px; animation-duration: 427ms; }
-          // &:nth-child(7)  { left: 115px; animation-duration: 441ms; }
-          // &:nth-child(8)  { left: 134px; animation-duration: 419ms; }
-          // &:nth-child(9)  { left: 153px; animation-duration: 487ms; }
+          // &:nth-child(1) { left: 1px; animation-duration: 474ms; }
+          // &:nth-child(2) { left: 20px; animation-duration: 433ms; }
+          // &:nth-child(3) { left: 39px; animation-duration: 407ms; }
+          // &:nth-child(4) { left: 58px; animation-duration: 458ms; }
+          // &:nth-child(5) { left: 77px; animation-duration: 400ms; }
+          // &:nth-child(6) { left: 96px; animation-duration: 427ms; }
+          // &:nth-child(7) { left: 115px; animation-duration: 441ms; }
+          // &:nth-child(8) { left: 134px; animation-duration: 419ms; }
+          // &:nth-child(9) { left: 153px; animation-duration: 487ms; }
           // &:nth-child(10) { left: 172px; animation-duration: 442ms; }
-          // &:nth-child(11)  { left: 191px; animation-duration: 441ms; }
-          // &:nth-child(12)  { left: 210px; animation-duration: 419ms; }
-          // &:nth-child(13)  { left: 229px; animation-duration: 487ms; }
+          // &:nth-child(11) { left: 191px; animation-duration: 441ms; }
+          // &:nth-child(12) { left: 210px; animation-duration: 419ms; }
+          // &:nth-child(13) { left: 229px; animation-duration: 487ms; }
           // &:nth-child(14) { left: 248px; animation-duration: 442ms; }
 
           // le même résultat dynamisé avec une boucle Sass
@@ -204,7 +203,7 @@
 
         &-progress {
           background-color: black;
-          bottom: 100%;
+          bottom: 0;
           margin: 0;
           padding: 0;
           bottom: 0;
@@ -249,7 +248,7 @@
 }
 
 @keyframes sound {
-  0% {
+ 0% {
     opacity: .35;
     height: 0%;
  }

@@ -6,11 +6,13 @@ import classNames from 'classnames';
 import './style.scss';
 
 const Details = ({
+  id,
   mood,
   band,
   track,
   tempo,
   freq,
+  speed,
   image,
   close,
 }) => {
@@ -22,24 +24,11 @@ const Details = ({
     for (let i = 0; i < 14; i++) {
       const bar = Math.floor((Math.random() * 100) + 1);
 
-      let msDuration = '';
-
-      if (mood === 'Repos') {
-        msDuration = Math.floor((Math.random() * 87) + 600);
-      }
-      if (mood === 'Energique') {
-        msDuration = Math.floor((Math.random() * 87) + 400);
-      }
-      if (mood === 'Survolté') {
-        msDuration = Math.floor((Math.random() * 87) + 300);
-      }
-      if (mood === 'Chill') {
-        msDuration = Math.floor((Math.random() * 87) + 500);
-      }
+      const msDuration = Math.floor((Math.random() * 87) + speed);
 
       const style = {
         height: `${bar}%`,
-        'animation-duration': `${msDuration}ms`,
+        animationDuration: `${msDuration}ms`,
       };
 
       progressbars.push(
@@ -62,7 +51,7 @@ const Details = ({
   };
 
   return (
-    <div className={classNames('details', { 'details--disappears': isDisapears })}>
+    <div key={id} className={classNames('details', { 'details--disappears': isDisapears })}>
       <div className="details__close">
         <button type="button" className="details__close-button" onClick={handleClose}>X</button>
       </div>
@@ -98,11 +87,13 @@ const Details = ({
 };
 
 Details.propTypes = {
+  id: PropTypes.number.isRequired,
   mood: PropTypes.string.isRequired,
   band: PropTypes.string.isRequired,
   track: PropTypes.string.isRequired,
   tempo: PropTypes.any.isRequired,
   freq: PropTypes.string.isRequired,
+  speed: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   close: PropTypes.func.isRequired,
 };

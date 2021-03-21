@@ -14,6 +14,7 @@ const details = [
     freq: '1,5 khz',
     analysis: '',
     image: smashing,
+    speed: 300,
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const details = [
     freq: '2,2 khz',
     analysis: '',
     image: smoke,
+    speed: 500,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const details = [
     freq: '1,5 khz',
     analysis: '',
     image: davis,
+    speed: 600,
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ const details = [
     freq: '1 khz',
     analysis: '',
     image: heyya,
+    speed: 400,
   },
   {
     id: 5,
@@ -54,6 +58,7 @@ const details = [
     freq: '0 khz',
     analysis: '',
     image: silence,
+    speed: '',
   },
 ];
 

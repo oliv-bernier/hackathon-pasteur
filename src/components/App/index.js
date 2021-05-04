@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import icons from '../../data/icons';
 import data from '../../data/details';
 
+import shuffle from '../../selectors/positioning';
+
 import Home from '../Home';
 import Timer from '../Timer';
 
@@ -12,13 +14,7 @@ const App = () => {
   const [theIcons, setIcons] = useState([]);
   const [ambiance, setAmbiance] = useState([]);
 
-  const iconsClasses = [
-    'one',
-    'second',
-    'third',
-    'fourth',
-    'fifth',
-  ];
+  shuffle(icons);
 
   useEffect(() => {
     setIcons(icons);
@@ -27,17 +23,7 @@ const App = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const shuffled = iconsClasses
-        .map((a) => ({ sort: Math.random(), value: a }))
-        .sort((a, b) => a.sort - b.sort)
-        .map((a) => a.value);
-
-      const shuffledIcons = icons.map((icon, index) => {
-        icon.class = shuffled[index];
-        return icons;
-      });
-
-      setIcons(shuffledIcons);
+      setIcons(shuffle(icons));
     }, 5000);
     return () => clearInterval(interval);
   }, []);

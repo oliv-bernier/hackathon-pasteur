@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// import { keyframes } from 'styled-components';
 
 import './style.scss';
 
@@ -17,6 +16,10 @@ const Details = ({
   close,
 }) => {
   const [isDisapears, setDisapears] = useState(false);
+
+  useEffect(() => {
+    document.title = `${mood} - Hackathon Pasteur`;
+  });
 
   const dynamicBars = () => {
     let progressbars = [];

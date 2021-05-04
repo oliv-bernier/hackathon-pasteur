@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import map from '../../assets/images/map-etage1.png';
 
 import Details from '../Details';
 
-import icons from '../../data/icons';
-import data from '../../data/details';
-
 import './style.scss';
 
-const Home = () => {
+const Home = ({ icons, ambiance }) => {
+  document.title = 'Ambiances - Hackathon Pasteur';
+
   const [isDetails, setDetails] = useState(false);
 
   const [detailsIndex, setDetailsIndex] = useState('');
@@ -38,10 +38,15 @@ const Home = () => {
         ))}
       </div>
       {isDetails && (
-        <Details {...data[detailsIndex]} close={setDetails} />
+        <Details {...ambiance[detailsIndex]} close={setDetails} />
       )}
     </div>
   );
+};
+
+Home.propTypes = {
+  icons: PropTypes.array.isRequired,
+  ambiance: PropTypes.array.isRequired,
 };
 
 export default Home;

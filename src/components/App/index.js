@@ -36,7 +36,7 @@ const App = () => {
       </div>
       <div className="App__author">
         <a className="App__author-link" href="https://github.com/oliv-bernier/hackathon-pasteur" target="blank">
-          GitHub
+          GitHub repository
         </a>
       </div>
     </div>

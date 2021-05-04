@@ -54,7 +54,7 @@ const Details = ({
   };
 
   return (
-    <div key={id} className={classNames('details', { 'details--disappears': isDisapears })}>
+    <div key={id} onClick={handleClose} className={classNames('details', { 'details--disappears': isDisapears })}>
       <div className="details__close">
         <button type="button" className="details__close-button" onClick={handleClose}>X</button>
       </div>

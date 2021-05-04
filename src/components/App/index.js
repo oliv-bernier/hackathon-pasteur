@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import icons from '../../data/icons';
 import data from '../../data/details';
+import purpose from '../../data/purpose';
 
 import shuffle from '../../selectors/positioning';
 
@@ -14,8 +15,6 @@ const App = () => {
   const [theIcons, setIcons] = useState([]);
   const [ambiance, setAmbiance] = useState([]);
 
-  shuffle(icons);
-
   useEffect(() => {
     setIcons(icons);
     setAmbiance(data);
@@ -24,14 +23,17 @@ const App = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIcons(shuffle(icons));
-    }, 5000);
+    }, 30000);
     return () => clearInterval(interval);
-  }, []);
+  });
 
   return (
     <div className="App">
       <Home icons={theIcons} ambiance={ambiance} />
       <Timer />
+      <div className="App__purpose">
+        {purpose.text}<br />{purpose.text2}
+      </div>
       <div className="App__author">
         <a className="App__author-link" href="https://github.com/oliv-bernier/hackathon-pasteur" target="blank">
           GitHub

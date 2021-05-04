@@ -41,8 +41,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.14.0",
     "@types/classnames": "^2.2.11",
-    "eslint": "^7.15.0",
+    "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.22.1",

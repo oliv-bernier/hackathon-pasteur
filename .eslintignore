@@ -3,3 +3,4 @@ dist/
 config/
 postcss.config.js
 reportWebVitals.js
+src/components/Details/index.js

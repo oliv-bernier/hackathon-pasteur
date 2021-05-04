@@ -2,7 +2,7 @@
 
 Project carried out as part of a hackaton for the Hotel Pasteur in Rennes, here it is the web visualization of an idea relating to an atmosphere sensor arranged in places.
 
-Check out the result : https://hackaton-pasteur-ambiance.surge.sh/
+Check out the result : https://hackathon-pasteur-ambiance.surge.sh/
 
 ---
 

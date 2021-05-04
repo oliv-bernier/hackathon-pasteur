@@ -32,11 +32,11 @@ const App = () => {
       <Home icons={theIcons} ambiance={ambiance} />
       <Timer />
       <div className="App__purpose">
-        {purpose.text}<br />{purpose.text2}
+        {purpose.text}<br />{purpose.text2}<br />{purpose.text3}<br /><br />{purpose.text4}
       </div>
       <div className="App__author">
-        <a className="App__author-link" href="https://github.com/oliv-bernier/hackathon-pasteur" target="blank">
-          GitHub repository
+        <a className="App__author-link" href="https://github.com/oliv-bernier/hackathon-pasteur">
+          GitHub
         </a>
       </div>
     </div>

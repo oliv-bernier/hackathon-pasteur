@@ -16,7 +16,7 @@
     animation: disappears .7s 1;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     font-size: 0.7rem;
     top: 50%;
   }
@@ -36,9 +36,8 @@
       transition-duration: 0.5s;
       z-index: 1;
 
-      @media (max-width: 768px) {
-        left: 0;
-        top: -10px;
+      @media (max-width: 767px) {
+        top: -230px;
         height: 30px;
         width: 30px;
         font-size: 1rem;
@@ -67,7 +66,7 @@
     }
 
     @media (max-width: 767px) {
-      width: 85%;
+      width: fit-content;
       position: sticky;
     }
 
@@ -88,6 +87,10 @@
         border-radius: 12px;
         width: 100%;
         text-align: left;
+
+        @media (max-width: 767px) {
+          margin: 0.3rem 0;
+        }
       }
     }
 
@@ -102,7 +105,7 @@
       position: relative;
       height: 130px;
 
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         width: 95%;
         height: 100px;
       }

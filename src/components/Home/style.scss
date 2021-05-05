@@ -5,14 +5,18 @@
   justify-content: center;
   align-items: center;
   margin: 0;
+  height: 100%;
 
   &__map {
     position: relative;
     width: 100vw;
-    padding-top: 5rem;
+
+    @media (min-width: 1400px) {
+      padding-top: 5rem;
+    }
 
     &-image {
-      width: 100vw;
+      width: 100%;
 
       @media (min-width: 1400px) {
         width: 80vw;
@@ -59,6 +63,33 @@
       &--fifth {
         top: 50%;
         left: 60%;
+      }
+
+      @media (max-width: 1399px) {
+        &--one {
+          top: 40%;
+          left: 5%;
+        }
+  
+        &--second {
+          top: 30%;
+          left: 38%;
+        }
+  
+        &--third {
+          top: 60%;
+          left: 42%;
+        }
+  
+        &--fourth {
+          top: 5%;
+          left: 65%;
+        }
+  
+        &--fifth {
+          top: 45%;
+          left: 61%;
+        }
       }
     }
   }

@@ -32,7 +32,7 @@
   border-radius: 100% 0 0 100% / 50% 0 0 50%;
   z-index: 200;
   border-right: none;
-  animation: rota 30s linear infinite;
+  animation: rota 30s linear 1;
 }
 
 .wrapper:hover .spinner,
@@ -46,7 +46,7 @@
   left: 50%;
   opacity: 0;
   z-index: 100;
-  animation: opa 30s steps(1, end) infinite reverse;
+  animation: opa 30s steps(1, end) 1 reverse;
   border-left: none;
 }
 
@@ -57,7 +57,7 @@
   background: inherit;
   opacity: 1;
   z-index: 300;
-  animation: opa 30s steps(1, end) infinite;
+  animation: opa 30s steps(1, end) 1;
 }
 
 @keyframes rota {

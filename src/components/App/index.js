@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div className="App">
       <Home icons={theIcons} ambiance={ambiance} />
-      <Timer />
+      <Timer key={theIcons} />
       <div className="App__purpose">
         {purpose.text}<br />{purpose.text2}<br />{purpose.text3}<br /><br />{purpose.text4}
       </div>

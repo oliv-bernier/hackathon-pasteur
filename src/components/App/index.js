@@ -22,7 +22,7 @@ const App = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIcons(shuffle(icons));
+      setIcons(shuffle(theIcons));
     }, 30000);
     return () => clearInterval(interval);
   });

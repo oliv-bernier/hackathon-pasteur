@@ -1,11 +1,7 @@
 const shuffledPositioning = (icons) => {
-  const iconsClasses = [
-    'one',
-    'second',
-    'third',
-    'fourth',
-    'fifth',
-  ];
+  const iconsClasses = icons.map((icon) => (
+    icon.class
+  ));
 
   const shuffled = iconsClasses
     .map((a) => ({ sort: Math.random(), value: a }))
